@@ -1,0 +1,336 @@
+- @body_class = 'page--home'
+
+.hero.hero--home
+  .hero__media-overlay
+  .hero__media-background
+  .hero__know-more
+    = link_to 'Saiba Mais', '#section-noivos', class: 'js-scrollto'
+    .arrow.animated.bounce-down
+
+  .hero__body
+    .l-container
+      .logo
+      .lettering
+        h1.hero__title Chegou a hora do casamento de <span>Cris & Rafa</span>
+        h2.hero__subtitle 27 de setembro de 2014
+
+
+.content-wrapper
+
+  / SECTION: SOBRE OS NOIVOS
+  section.section.section__noivos#section-noivos
+    .section__body
+      .container
+
+        .panel.panel__bride
+          .panel__header
+            h1.panel__title A Noiva
+            h2.panel__subtitle Cristiane Bassotelli
+          .panel__body
+            .photo
+              .frame
+                .content
+              img src='assets/images/noiva.jpg'
+            p Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus.
+            p Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus
+
+        .panel.panel__groom
+          .panel__header
+            h1.panel__title O Noivo
+            h2.panel__subtitle Rafael Torales
+          .panel__body
+            .photo
+              .frame
+              img src='assets/images/noivo.jpg'
+            p Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus.
+            p Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus
+
+
+
+  / SECTION: MOSAICO DE FOTOS
+  section.section.section__mosaic
+
+    .section__body
+      img src='assets/images/mosaic.jpg'
+
+
+
+  / SECTION: WEDDING INFO
+  section.section.section__wedding_info
+    .container
+      .section__header
+        .container
+          h1.section__title Boa comida, muita bebida e duas pessoas falando ‘sim’. <b>Vamos lá?</b>
+
+      .section__body
+        .container
+
+          .panel.panel__cerimony
+            .panel__header
+              h1.panel__title A Cerimônia
+            .panel__body
+              p Our big day is on Friday, November 16th, in the sun drenched gardens of the Postcard Inn on St. Pete Beach Florida. Our ceremony will start promptly at 4:30 p.m. Sunglasses are advised as the sunset should be nothing.
+              .get-directions
+                .iframe
+                  iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3839.730460472927!2d-47.88738299999999!3d-15.7653919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3a496311d7cb%3A0x2a6f23e43525d82c!2sShcn%2C+Brasilia%2C+Federal+District%2C+70746-400%2C+Brazil!5e0!3m2!1sen!2s!4v1407380070073" width="100%" height="190" frameborder="0" style="border:0"
+                h2 Paróquia Nossa Senhora da Esperança
+                p
+                  | EQN 307/308 s/n, Asa Norte<br>
+                  | Brasília-DF, 70746-400<br>
+                  = link_to 'Ver Mapa', 'https://www.google.com/maps/place/Shcn,+Brasilia,+Federal+District,+70746-400,+Brazil/@-15.7653919,-47.887383,17z/data=!3m1!4b1!4m2!3m1!1s0x935a3a496311d7cb:0x2a6f23e43525d82c?hl=en-US', target: '_blank'
+
+          .panel.panel__reception
+            .panel__header
+              h1.panel__title Recepção <span>(A Festa)</span>
+            .panel__body
+              p Our reception will start immediately following the ceremony with drinks and hors d'oeuvres served promptly. The guys from The Hip Abduction have signed on, and we're stoked! They're an amazing local band a great sound.
+              .get-directions
+                .iframe
+                  iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3839.2648649688895!2d-48.000254!3d-15.789982!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a316019c294d9%3A0xf7557fa49d401903!2sVilla+Regia+Eventos!5e0!3m2!1sen!2s!4v1407379298916" width="100%" height="190" frameborder="0" style="border:0"
+                h2 Villa Regia
+                p
+                  | EPVL Chácara 25/2, Vicente Pires<br>
+                  | Brasília-DF, 72005-261<br>
+                  = link_to 'Ver Mapa', 'https://www.google.com/maps/place/Villa+Regia+Eventos/@-15.789982,-48.000254,15z/data=!4m2!3m1!1s0x0:0xf7557fa49d401903?hl=en-US', target: '_blank'
+
+
+  / SECTION: NOSSAS MADRINHAS E PADRINHOS
+  section.section.section__padrinhos
+    .section__header
+      .container
+        h1.section__title Nossas Madrinhas e Padrinhos
+
+    .section__body
+
+      .list.list__padrinhos.noiva
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/adriana-bassotelli.jpg' width='80' height='80'
+            .item__name
+              h2 Adriana Bassotelli
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/andre-bassotelli.jpg' width='80' height='80'
+            .item__name
+              h2 André Bassotelli
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/isabela-solino.jpg' width='80' height='80'
+            .item__name
+              h2 Isabela Solino
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/eduardo-bassotelli.jpg' width='80' height='80'
+            .item__name
+              h2 Eduardo Bassotelli
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/paula-hungria.jpg' width='80' height='80'
+            .item__name
+              h2 Paula Hungria
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/raony-hungria.jpg' width='80' height='80'
+            .item__name
+              h2 Raony Hungria
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/andreia-duarte.jpg' width='80' height='80'
+            .item__name
+              h2 Andreia Duarte
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/caetano-bane.jpg' width='80' height='80'
+            .item__name
+              h2 Caetano Banê
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/ana-clara.jpg' width='80' height='80'
+            .item__name
+              h2 Ana Clara Mendes
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/hamilton-barreto.jpg' width='80' height='80'
+            .item__name
+              h2 Hamilton Barreto
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/ana-carol.jpg' width='80' height='80'
+            .item__name
+              h2 Ana Carol Monteiro
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/poty-castro.jpg' width='80' height='80'
+            .item__name
+              h2 Poty Castro
+
+
+
+      .list.list__padrinhos
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/vivi-mascarenhas.jpg' width='80' height='80'
+            .item__name
+              h2 Vivi Mascarenhas
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/guga.jpg' width='80' height='80'
+            .item__name
+              h2 Guga
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/vanessa-porto.jpg' width='80' height='80'
+            .item__name
+              h2 Vanessa Porto
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/daniel-vieira.jpg' width='80' height='80'
+            .item__name
+              h2 Daniel Vieira
+
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/patricia-somera.jpg' width='80' height='80'
+            .item__name
+              h2 Patricia Somera
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/renato-carvalho.jpg' width='80' height='80'
+            .item__name
+              h2 Renato Carvalho
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/gisele-ribeiro.jpg' width='80' height='80'
+            .item__name
+              h2 Gisele Ribeiro
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/flavio-ludgero.jpg' width='80' height='80'
+            .item__name
+              h2 Flavio Ludgero
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/thaiza-brasil.jpg' width='80' height='80'
+            .item__name
+              h2 Thaíza Brasil
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/hugo-drop.jpg' width='80' height='80'
+            .item__name
+              h2 Hugo Drop
+
+        .list__item
+          .item__madrinha
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/lia-ravena.jpg' width='80' height='80'
+            .item__name
+              h2 Lia Ravena
+          .item__padrinho
+            .item__photo
+              .frame
+              img src='assets/images/padrinhos/tiago-araujo.jpg' width='80' height='80'
+            .item__name
+              h2 Tiago Araújo
+
+
+
+  / SECTION: LISTA DE PRESENTES
+  section.section.section__lista_presentes
+
+    .section__body
+      .container
+        .panel.panel__lista_presentes_descricao
+          .panel__header
+            h1.panel__title Lista de Presentes
+          .panel__body
+            p We would be honored if you would join us in celebrating our big day! The gift of your presence would mean the world to us, and we understand that many of you will be travelling great distances in order to join us.
+            p There is no obligation to give but if you would like to view our registries at Crate & Barrel and Bed Bath & Beyond the links below will take you directly there.
+
+        .panel.panel__registry_logos
+          .panel__body
+            .company_logo
+              = link_to 'http://listadecasamento.fastshop.com.br/ListaCasamento/ListaCasamentoProdutos.aspx?ID=168120', class: 'registry_logo', target: '_blank' do
+                img src='assets/images/fastshop.png'
+
+            .company_logo
+              = link_to 'https://www.tokstok.com.br/lic/convidados/listaPresentes.jsf?idLista=222040', class: 'registry_logo', target: '_blank' do
+                img src='assets/images/tokstok.png'
+
+
+
+
+  / SECTION: CONFIRMAR PRESENÇA
+  section.section.section__rsvp
+
+    .section__body
+      .container
+
+        .panel.panel__rsvp
+          .panel__header
+            h1.section__title Confirme sua Presença (RSVP)
+          .panel__body
+            p Por favor, envie um email para <a href='mailto:falecomcriserafa@gmail.com'>falecomcriserafa@gmail.com</a> com seu nome e o número de convidados até o dia <b>12 de Setembro</b>. Essa informação é muito importante para nós.
+            = link_to 'Confirmar Presença', 'mailto:falecomcriserafa@gmail.com', class: 'btn btn--primary'
+
+
+footer.page-footer#page-footer
+  .l-container
+
+    .dancing-shoes
+      p Não esqueça seu tênis de dança
+
+
+
+
+
+
+
+
+
+
+
+
+
