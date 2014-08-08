@@ -402,30 +402,30 @@ body.subscriptions.new
     padding-bottom: 50px
 
 
-    .list.list__padrinhos
-      +span-columns(5)
 
-      &.noiva
-        +shift(1)
+
+    .list.list__padrinhos
+      +span-columns(10)
+      +shift(1)
 
       .list__item
-        +span-columns(12)
-        margin-bottom: 10px
+        width: 80px
+        float: left
+        margin-right: 10px
 
         .item__madrinha, .item__padrinho
-          +span-columns(6)
 
           .item__name
-            height: 80px
 
             h2
-              font-size: 16px
+              font-size: 14px
               text-align: center
               text-transform: capitalize
               font-weight: 300
-              line-height: 80px
               letter-spacing: 0
+              line-height: 140%
               color: #666
+              margin: 0
 
           .item__photo
             width: 80px
@@ -436,26 +436,95 @@ body.subscriptions.new
             border: 2px solid #fff
             box-shadow: 0 0 5px rgba(#5d4f3a, .2)
 
-
-
-
         .item__madrinha
-          .item__name
-            float: right
-            margin-right: 20px
-            h2
-              text-align: right
           .item__photo
-            float: right
+            margin-top: 10px
+            margin-bottom: 5px
 
         .item__padrinho
-          .item__name
-            float: left
-            margin-left: 20px
-            h2
-              text-align: left
           .item__photo
-            float: left
+            margin-top: 5px
+            margin-bottom: 10px
+
+
+
+
+
+
+// ===============================================================================
+
+    // .list.list__padrinhos
+    //   +span-columns(10)
+    //   +shift(1)
+
+    //   .list__item
+    //     width: 80px
+    //     float: left
+    //     margin-right: 10px
+
+    //     .item__photo
+    //       width: 80px
+    //       height: 80px
+    //       display: block
+    //       overflow: hidden
+    //       border-radius: 100px
+    //       border: 2px solid #fff
+    //       box-shadow: 0 0 5px rgba(#5d4f3a, .2)
+
+// ===============================================================================
+
+
+    // .list.list__padrinhos
+    //   +span-columns(5)
+
+    //   &.noiva
+    //     +shift(1)
+
+    //   .list__item
+    //     +span-columns(12)
+    //     margin-bottom: 10px
+
+    //     .item__madrinha, .item__padrinho
+    //       +span-columns(6)
+
+    //       .item__name
+    //         height: 80px
+
+    //         h2
+    //           font-size: 16px
+    //           text-align: center
+    //           text-transform: capitalize
+    //           font-weight: 300
+    //           line-height: 80px
+    //           letter-spacing: 0
+    //           color: #666
+
+    //       .item__photo
+    //         width: 80px
+    //         height: 80px
+    //         display: block
+    //         border-radius: 100px
+    //         overflow: hidden
+    //         border: 2px solid #fff
+    //         box-shadow: 0 0 5px rgba(#5d4f3a, .2)
+
+    //     .item__madrinha
+    //       .item__name
+    //         float: right
+    //         margin-right: 20px
+    //         h2
+    //           text-align: right
+    //       .item__photo
+    //         float: right
+
+    //     .item__padrinho
+    //       .item__name
+    //         float: left
+    //         margin-left: 20px
+    //         h2
+    //           text-align: left
+    //       .item__photo
+    //         float: left
 
 
 
