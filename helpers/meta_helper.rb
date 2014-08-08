@@ -1,5 +1,5 @@
 def page_title
-  title = "Middleman" #Set site title here
+  title = "Casório Cris & Rafa" #Set site title here
 
   if data.page.title
     title = data.page.title + " — " + title
@@ -9,7 +9,7 @@ def page_title
 end
 
 def page_description
-  description = "A Static Site Generator" # Set site description here
+  description = "Informações do casamento de Cris e Rafa que acontecerá em Brasília, no dia 27 de setembro de 2014" # Set site description here
 
   if data.page.description
     description = data.page.description
@@ -29,7 +29,7 @@ def page_keywords
 end
 
 def page_author
-  author = "Author Name" #Set site author name here
+  author = "Rafael Torales" #Set site author name here
 
   if data.page.author
     author = data.page.author

@@ -13,6 +13,7 @@
     "fastclick": "~1.0.3",
     "enquire": "~2.1.1",
     "jquery": "~2.1.1",
-    "picturefill": "~2.1.0"
+    "picturefill": "~2.1.0",
+    "neat": "~1.6.0"
   }
 }

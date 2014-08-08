@@ -46,3 +46,537 @@
 //   [6] #components
 // -------------------------------------
 @import "components"
+
+// -------------------------------------
+//   [7] #helpers
+// -------------------------------------
+@import "helpers/mixins"
+
+
+.l-container, .container
+  @include outer-container
+  padding-left: 12px
+  padding-right: 12px
+  padding-top: 40px
+  padding-bottom: 40px
+
+
+// HERO
+// *************************************
+//
+//   Hero
+//
+// *************************************
+
+html, body
+  height: 100%
+  min-height: 100%
+
+.hero
+  @include clearfix
+  position: relative
+  background-size: cover
+  background-repeat: no-repeat
+
+  .btn
+    text-transform: uppercase
+
+  .hero__body
+    position: relative
+    z-index: 2
+
+
+  .hero__media-overlay
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1
+    background-color: rgba(#b69c7b, .75)
+
+  .hero__media-background
+    width: 100%
+    height: 100%
+    position: absolute
+    padding: 0
+    margin: 0
+    left: 0px
+    top: 0px
+    z-index: -1000
+    overflow: hidden
+    background-color: #000
+
+
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+.hero--home
+  @extend .hero
+  height: 100%
+  min-height: 100%
+  width: 100%
+  padding-top: 0
+
+  .hero__media-background
+    background: #212121 image-url("cover.jpg") no-repeat 50% 100%
+    background-size: cover
+
+  .hero__header
+    text-align: center
+    color: #fff
+
+  .hero__title
+    font-size: 28px
+    line-height: 1
+    letter-spacing: -0.03em
+    color: #fff
+
+  .hero__subtitle
+    font-size: 15px
+    line-height: 1.2
+    padding: 0 0 30px 0
+
+  .hero__body
+    color: #fff
+    text-align: center
+    padding-top: 0
+
+  .logo
+    width: 170px
+    height: 162px
+    background: transparent image-url("logo.png") no-repeat 0 0
+    background-size: 170px 162px
+    margin: 20px auto 0 auto
+
+  .lettering
+    width: 360px
+    height: 240px
+    display: block
+    text-indent: -9999px
+    background: transparent image-url("lettering.png") no-repeat 0 0
+    background-size: 360px 240px
+    margin: 40px auto 0 auto
+
+  @include respond-to(screen-md, screen-lg)
+    .hero__body
+      padding-top: 0px
+
+    .hero__title
+      font-size: 60px
+
+    .hero__subtitle
+      font-size: 23px
+      padding: 0 50px 30px 50px
+      color: rgba(#fff, .9)
+      width: 90%
+      margin-left: auto
+      margin-right: auto
+
+  @include respond-to(vertical-notebook-sm)
+    padding-top: 0
+
+
+// HOW IT WORKS
+
+body.subscriptions.new
+  header.header-page
+    display: none
+
+@include keyframes(bounce)
+  0%
+    @include transform(scale(1.0))
+  10%
+    @include transform(scale(1.2))
+  20%
+    @include transform(scale(1.3))
+  30%
+    @include transform(scale(1.2))
+  40%
+    @include transform(scale(1.0))
+  50%
+    @include transform(scale(1.1))
+  60%
+    @include transform(scale(1.0))
+  70%
+    @include transform(scale(1.05))
+  80%
+    @include transform(scale(1.0))
+  90%
+    @include transform(scale(1.02))
+  100%
+    @include transform(scale(1.0))
+
+
+@include keyframes(bounce-down)
+  0%, 20%, 50%, 80%, 100%
+    @include transform(translateY(0))
+  40%
+    @include transform(translateY(-15px))
+  60%
+    @include transform(translateY(-10px))
+
+.hero__know-more
+  position: absolute
+  bottom: 30px
+  z-index: 3
+  left: 50%
+  width: 160px
+  margin-left: -80px
+  text-align: center
+  display: none
+  a
+    color: rgba(#fff, .5)
+    text-decoration: none
+    width: 160px
+    height: 60px
+    display: block
+    position: relative
+    bottom: -37px
+    z-index: 4
+  @include respond-to(screen-lg)
+    display: block
+
+.arrow
+  width: 30px
+  height: 30px
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=)
+  background-size: contain
+  margin: 0 auto
+
+.bounce-down
+  @include animation(bounce-down 2s 2)
+  @include animation-delay(1s)
+
+
+//=========================================================================================================================
+
+
+// SECTION: SOBRE OS NOIVOS
+.section__noivos
+  +clearfix
+
+  .section__body
+
+    .container
+      padding-top: 40px
+      padding-bottom: 40px
+
+      .panel__bride, .panel__groom
+        +span-columns(5)
+
+
+        .panel__header
+          .panel__title
+            font-size: 18px
+            font-weight: 400
+            color: rgba($light-brown, .5)
+            margin: 0
+            line-height: 110%
+          .panel__subtitle
+            font-weight: 300
+            font-size: 24px
+            margin: 0
+
+        .panel__body
+          text-align: center
+          .photo
+            max-width: 100%
+            background-color: #333
+            margin: 12px auto
+            position: relative
+            text-align: center
+
+            img
+              text-align: center
+
+            .frame
+              position: absolute
+              width: 100%
+              height: 100%
+              padding: 10px
+
+              &:before
+                content: ''
+                display: block
+                border: 1px dotted rgba(white, .5)
+                width: 100%
+                height: 100%
+
+          p
+            text-align: justify
+
+      .panel__bride
+        +shift(1)
+
+
+// SECTION: MOSAICO DE FOTOS
+.section__mosaic
+
+  .section__body
+    overflow: hidden
+    text-align: center
+
+    img
+      max-width: 100%
+
+
+// SECTION: WEDDING INFO
+.section__wedding_info
+  background: transparent url('../images/barney-stinson.png') no-repeat
+  background-size: 195px 270px
+  background-position: 21% 100%
+
+
+  .section__header
+    +span-columns(3)
+    +shift(1)
+
+    .container
+      .section__title
+        font-weight: 300
+
+  .section__body
+    +span-columns(7)
+
+    .container
+
+      .panel__cerimony, .panel__reception
+        +span-columns(5)
+
+        .panel__header
+          .panel__title
+            font-size: 21px
+            font-weight: 400
+            margin: 0 0 10px 0
+
+            span
+              font-weight: 300
+
+        .panel__body
+          text-align: justify
+
+          p
+            margin: 0 0 15px 0
+
+          .get-directions
+
+            .iframe
+              margin: 0
+              margin-bottom: 5px
+
+            h2
+              font-size: 12px
+              font-weight: 400
+              color: $medium-gray
+              margin: 0
+              letter-spacing: .04em
+              line-height: 180%
+            p
+              margin: 0
+              font-size: 13px
+              line-height: 180%
+
+      .panel__cerimony
+        +shift(1)
+
+      .panel__reception
+        +shift(1)
+        @include omega
+
+
+// SECTION: NOSSAS MADRINHAS E PADRINHOS
+.section__padrinhos
+  background-color: #f2f2f2
+
+  .section__header
+    .container
+      .section__title
+        text-align: center
+        margin-bottom: 0
+
+  .section__body
+    +clearfix
+    padding-bottom: 50px
+
+
+    .list.list__padrinhos
+      +span-columns(5)
+
+      &.noiva
+        +shift(1)
+
+      .list__item
+        +span-columns(12)
+        margin-bottom: 10px
+
+        .item__madrinha, .item__padrinho
+          +span-columns(6)
+
+          .item__name
+            height: 80px
+
+            h2
+              font-size: 16px
+              text-align: center
+              text-transform: capitalize
+              font-weight: 300
+              line-height: 80px
+              letter-spacing: 0
+              color: #666
+
+          .item__photo
+            width: 80px
+            height: 80px
+            display: block
+            border-radius: 100px
+            overflow: hidden
+            border: 2px solid #fff
+            box-shadow: 0 0 5px rgba(#5d4f3a, .2)
+
+
+
+
+        .item__madrinha
+          .item__name
+            float: right
+            margin-right: 20px
+            h2
+              text-align: right
+          .item__photo
+            float: right
+
+        .item__padrinho
+          .item__name
+            float: left
+            margin-left: 20px
+            h2
+              text-align: left
+          .item__photo
+            float: left
+
+
+
+
+// SECTION: LISTA DE PRESENTES
+.section__lista_presentes
+  background-color: #e6e5e0
+
+  .section__body
+    .container
+      padding: 60px 0
+
+      .panel__lista_presentes_descricao
+        +span-columns(6)
+        +shift(1)
+
+        .panel__header
+          .panel__title
+
+        .panel__body
+
+      .panel.panel__registry_logos
+        +span-columns(3)
+        +shift(1)
+        .panel__body
+          .company_logo
+            position: relative
+            margin-bottom: 15px
+            padding: 10px
+            box-shadow: 0 2px 0 #d6d2c9
+            background-color: #fff
+
+
+            .registry_logo
+              display: block
+              padding: 15px 20px
+              text-align: center
+              z-index: 9999
+              border: 1px dotted #b7a997
+
+              &:hover
+                border: 1px solid #b7a997
+
+
+
+
+
+
+// SECTION: CONFIRMAR PRESENÇA
+.section__rsvp
+  background-color: #f2f2f2
+
+  .section__body
+    .container
+      padding: 80px 0
+
+      .panel__rsvp
+        +span-columns(8)
+        +shift(2)
+        border: 1px dotted #b7a997
+        padding: 80px
+        background-color: #fff
+        box-shadow: 0px 0 50px rgba(#5d4f3a, .15)
+
+        .panel__header
+          .section__title
+            font-size: 42px
+            margin-bottom: 10px
+
+        .panel__body
+          p
+            text-align: justify
+            font-size: 16px
+            line-height: 180%
+
+            b
+              font-weight: 500
+              text-transform: uppercase
+
+          .btn
+            background-color: #dca02c
+            border-radius: 4px
+            display: block
+            font-family: $oswald
+            font-weight: 300
+            width: 100%
+            text-align: center
+            padding: 15px 40px
+            font-size: 28px
+            color: #fff
+            text-decoration: none
+            text-transform: uppercase
+
+            &:hover
+              background-color: darken(#dca02c, 10%)
+
+            &:active
+              box-shadow: inset 0 5px 0 rgba(#000, .2)
+              background-color: darken(#dca02c, 20%)
+
+
+
+
+
+.page-footer
+  background-color: #f2f2f2
+  background: #f2f2f2 image-url("footer-tenis.png") no-repeat 50% 0
+  background-size: 1500px 72px
+
+  .l-container
+
+    .dancing-shoes
+      padding-top: 45px
+      p
+        text-align: center
+        text-transform: uppercase
+        font-size: 13px
+        color: #b7a997
+
+
+
+
+
+

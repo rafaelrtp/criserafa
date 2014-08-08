@@ -1,0 +1,34 @@
+%box-default
+  background-color: #fff
+  border-radius: 4px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+
+
+%intrinsic-ratio-parent
+  @include intrinsic-ratio-parent(false)
+
+%intrinsic-ratio-child
+  @include intrinsic-ratio-child(false)
+
+
+
+
+%sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0,0,0,0)
+  border: 0
+
+.sr-only
+  @extend %sr-only
+
+
+%float-left, .float-left
+  float: left
+
+%float-right, .float-right
+  float: right
