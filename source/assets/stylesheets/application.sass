@@ -135,19 +135,20 @@ html, body
 
 
   .logo
-    width: 150px
-    height: 143px
+    width: 136px
+    height: 130px
     background: transparent image-url("logo.png") no-repeat 0 0
-    background-size: 150px 143px
+    background-size: 136px 130px
     margin: 10px auto 0 auto
 
   .lettering
-    width: 300px
-    height: 200px
+    width: 270px
+    height: 180px
+    padding-bottom: 40px
     display: block
     text-indent: -9999px
     background: transparent image-url("lettering.png") no-repeat 0 0
-    background-size: 300px 200px
+    background-size: 270px 180px
     margin: 20px auto 0 auto
 
   @include respond-to(screen-md, screen-lg)
@@ -354,6 +355,7 @@ body.subscriptions.new
     +span-columns(12)
 
     .container
+      padding: 20px 0
 
       .panel__cerimony, .panel__reception
         +span-columns(10)
@@ -466,8 +468,7 @@ body.subscriptions.new
 
 
     .list.list__padrinhos
-      +span-columns(10)
-      +shift(1)
+      +span-columns(12)
 
       .list__item
         +span-columns(12)
