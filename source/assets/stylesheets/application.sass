@@ -128,52 +128,44 @@ html, body
     text-align: center
     color: #fff
 
-  .hero__title
-    font-size: 28px
-    line-height: 1
-    letter-spacing: -0.03em
-    color: #fff
-
-  .hero__subtitle
-    font-size: 15px
-    line-height: 1.2
-    padding: 0 0 30px 0
-
   .hero__body
     color: #fff
     text-align: center
     padding-top: 0
 
+
   .logo
-    width: 170px
-    height: 162px
+    width: 150px
+    height: 143px
     background: transparent image-url("logo.png") no-repeat 0 0
-    background-size: 170px 162px
-    margin: 20px auto 0 auto
+    background-size: 150px 143px
+    margin: 10px auto 0 auto
 
   .lettering
-    width: 360px
-    height: 240px
+    width: 300px
+    height: 200px
     display: block
     text-indent: -9999px
     background: transparent image-url("lettering.png") no-repeat 0 0
-    background-size: 360px 240px
-    margin: 40px auto 0 auto
+    background-size: 300px 200px
+    margin: 20px auto 0 auto
 
   @include respond-to(screen-md, screen-lg)
-    .hero__body
-      padding-top: 0px
+    .logo
+      width: 170px
+      height: 162px
+      background: transparent image-url("logo.png") no-repeat 0 0
+      background-size: 170px 162px
+      margin: 20px auto 0 auto
 
-    .hero__title
-      font-size: 60px
-
-    .hero__subtitle
-      font-size: 23px
-      padding: 0 50px 30px 50px
-      color: rgba(#fff, .9)
-      width: 90%
-      margin-left: auto
-      margin-right: auto
+    .lettering
+      width: 360px
+      height: 240px
+      display: block
+      text-indent: -9999px
+      background: transparent image-url("lettering.png") no-repeat 0 0
+      background-size: 360px 240px
+      margin: 40px auto 0 auto
 
   @include respond-to(vertical-notebook-sm)
     padding-top: 0
@@ -236,7 +228,7 @@ body.subscriptions.new
     position: relative
     bottom: -37px
     z-index: 4
-  @include respond-to(screen-lg)
+  @include respond-to(screen-md, screen-lg)
     display: block
 
 .arrow
@@ -263,10 +255,11 @@ body.subscriptions.new
     .container
       padding-top: 40px
       padding-bottom: 40px
-      width: 1140px
+
+      @include respond-to(screen-md, screen-lg)
 
       .panel__bride, .panel__groom
-        +span-columns(5)
+        +span-columns(10)
 
 
         .panel__header
@@ -309,8 +302,28 @@ body.subscriptions.new
           p
             text-align: justify
 
-      .panel__bride
+      .panel__bride, .panel__groom
         +shift(1)
+
+      .panel__bride
+        padding-bottom: 20px
+        margin-bottom: 30px
+        border-bottom: 1px solid rgba(#b7a997, .3)
+
+
+      @include respond-to(screen-md, screen-lg)
+
+        .panel__bride, .panel__groom
+          +span-columns(5)
+
+        .panel__groom
+          +shift(0)
+
+        .panel__bride
+          padding-bottom: 0
+          margin-bottom: 0
+          border: 0
+
 
 
 // SECTION: MOSAICO DE FOTOS
@@ -327,30 +340,23 @@ body.subscriptions.new
 
 // SECTION: WEDDING INFO
 .section__wedding_info
-  background: transparent url('../images/barney-stinson.png') no-repeat
-  background-size: 195px 270px
-  background-position: 60px 100%
-  width: 1140px
-  margin: 0 auto
-
-
-
 
   .section__header
-    +span-columns(3)
-    padding-left: 40px
+    +span-columns(10)
+    +shift(1)
+    padding: 0
 
-    .container
-      .section__title
-        font-weight: 300
+    .section__title
+      font-weight: 300
+      font-size: 32px
 
   .section__body
-    +span-columns(8)
+    +span-columns(12)
 
     .container
 
       .panel__cerimony, .panel__reception
-        +span-columns(5)
+        +span-columns(10)
 
         .panel__header
           .panel__title
@@ -387,16 +393,66 @@ body.subscriptions.new
 
       .panel__cerimony
         +shift(1)
+        margin-bottom: 30px
+        padding-bottom: 30px
+        border-bottom: 1px solid rgba(#b7a997, .3)
 
       .panel__reception
         +shift(1)
         @include omega
 
 
+@include respond-to(screen-md, screen-lg)
+  .section__wedding_info
+    background: transparent url('../images/barney-stinson.png') no-repeat
+    background-size: 195px 270px
+    background-position: 20% 100%
+
+    .section__header
+      +span-columns(3)
+
+      .section__title
+        font-weight: 300
+        margin: 0
+        padding-right: 20px
+        font-size: $h1-font-size
+
+    .section__body
+      +span-columns(8)
+
+      .container
+        padding: 0
+
+        .panel__cerimony, .panel__reception
+          +span-columns(5)
+
+
+        .panel__cerimony
+          +shift(1)
+          border: 0
+          margin-bottom: 0
+          padding-bottom: 0
+
+        .panel__reception
+          +shift(1)
+          @include omega
+
+@include respond-to(screen-md)
+  .section__wedding_info
+    background-position: 10% 100%
+
+    .section__header
+      +span-columns(3)
+
+      .section__title
+        padding-right: 0
+
+
+
 // SECTION: NOSSAS MADRINHAS E PADRINHOS
+
 .section__padrinhos
   background-color: #f2f2f2
-
 
   .section__header
     .container
@@ -407,23 +463,22 @@ body.subscriptions.new
   .section__body
     +clearfix
     padding-bottom: 50px
-    width: 1140px
-    margin: 0 auto
-
-
 
 
     .list.list__padrinhos
-      +span-columns(12)
+      +span-columns(10)
+      +shift(1)
 
       .list__item
-        width: 80px
-        float: left
-        margin-left: 15px
+        +span-columns(12)
+        margin-bottom: 10px
 
         .item__madrinha, .item__padrinho
+          +span-columns(6)
 
           .item__name
+            +span-columns(7)
+            padding: 8px 10px
 
             h2
               font-size: 14px
@@ -436,121 +491,101 @@ body.subscriptions.new
               margin: 0
 
           .item__photo
-            width: 80px
-            height: 80px
+            +span-columns(6)
+            width: 60px
+            height: 60px
             display: block
             border-radius: 100px
             overflow: hidden
             border: 2px solid #fff
             box-shadow: 0 0 5px rgba(#5d4f3a, .2)
 
+            img
+              width: 100%
+              height: 100%
+
         .item__madrinha
-          .item__photo
-            margin-top: 10px
-            margin-bottom: 5px
+          .item__name
+            h2
+              text-align: right
 
         .item__padrinho
-          .item__photo
-            margin-top: 5px
-            margin-bottom: 10px
+          .item__name
+            h2
+              text-align: left
 
 
+@include respond-to(screen-md, screen-lg)
+  .section__padrinhos
+
+    .section__header
+      .container
+        .section__title
+
+    .section__body
 
 
+      .list.list__padrinhos
+        +span-columns(12)
+
+        .list__item
+          width: 80px
+          float: left
+          margin: 0
+          margin-left: 10px
+
+          .item__madrinha, .item__padrinho
+            +span-columns(12)
+
+            .item__name
+              +span-columns(12)
+              padding: 0
+
+              h2
+                text-align: center
+
+            .item__photo
+              width: 80px
+              height: 80px
+
+          .item__madrinha
+            .item__photo
+              margin-top: 10px
+              margin-bottom: 5px
+
+          .item__padrinho
+            .item__photo
+              margin-top: 5px
+              margin-bottom: 10px
 
 
-// ===============================================================================
+      @include respond-to(screen-md)
+        .list.list__padrinhos
+          +span-columns(12)
 
-    // .list.list__padrinhos
-    //   +span-columns(10)
-    //   +shift(1)
+          .padrinhos__noiva, .padrinhos__noivo
+            +span-columns(10)
+            +shift(1)
 
-    //   .list__item
-    //     width: 80px
-    //     float: left
-    //     margin-right: 10px
-
-    //     .item__photo
-    //       width: 80px
-    //       height: 80px
-    //       display: block
-    //       overflow: hidden
-    //       border-radius: 100px
-    //       border: 2px solid #fff
-    //       box-shadow: 0 0 5px rgba(#5d4f3a, .2)
-
-// ===============================================================================
-
-
-    // .list.list__padrinhos
-    //   +span-columns(5)
-
-    //   &.noiva
-    //     +shift(1)
-
-    //   .list__item
-    //     +span-columns(12)
-    //     margin-bottom: 10px
-
-    //     .item__madrinha, .item__padrinho
-    //       +span-columns(6)
-
-    //       .item__name
-    //         height: 80px
-
-    //         h2
-    //           font-size: 16px
-    //           text-align: center
-    //           text-transform: capitalize
-    //           font-weight: 300
-    //           line-height: 80px
-    //           letter-spacing: 0
-    //           color: #666
-
-    //       .item__photo
-    //         width: 80px
-    //         height: 80px
-    //         display: block
-    //         border-radius: 100px
-    //         overflow: hidden
-    //         border: 2px solid #fff
-    //         box-shadow: 0 0 5px rgba(#5d4f3a, .2)
-
-    //     .item__madrinha
-    //       .item__name
-    //         float: right
-    //         margin-right: 20px
-    //         h2
-    //           text-align: right
-    //       .item__photo
-    //         float: right
-
-    //     .item__padrinho
-    //       .item__name
-    //         float: left
-    //         margin-left: 20px
-    //         h2
-    //           text-align: left
-    //       .item__photo
-    //         float: left
+          .padrinhos__noivo
+            margin-top: 40px
 
 
 
 
 // SECTION: LISTA DE PRESENTES
+
 .section__lista_presentes
   background-color: #e6e5e0
 
   .section__body
     .container
-      width: 1140px
-      margin: 0 auto
       padding: 60px 0
 
       .panel__lista_presentes_descricao
-        +span-columns(6)
+        +span-columns(10)
         +shift(1)
-        background: transparent image-url('gato-de-botas.png') no-repeat 35% bottom
+        background: transparent image-url('gato-de-botas.png') no-repeat 70% 95%
         background-size: 116px 125px
         padding-bottom: 30px
 
@@ -562,8 +597,8 @@ body.subscriptions.new
             font-size: 16px
 
       .panel.panel__registry_logos
-        +span-columns(3)
-        +shift(1)
+        +span-columns(8)
+        +shift(2)
         .panel__body
           .company_logo
             position: relative
@@ -584,33 +619,43 @@ body.subscriptions.new
                 border: 1px solid #b7a997
 
 
+      @include respond-to(screen-md, screen-lg)
 
+        .panel__lista_presentes_descricao
+          +span-columns(6)
+          +shift(1)
+          background: transparent image-url('gato-de-botas.png') no-repeat 35% bottom
+          background-size: 116px 125px
+          padding-bottom: 30px
 
+        .panel.panel__registry_logos
+          +span-columns(3)
+          +shift(1)
 
 
 // SECTION: CONFIRMAR PRESENÇA
+
 .section__rsvp
   background-color: #f2f2f2
 
   .section__body
     .container
-      padding: 80px 0
-      width: 1140px
-      margin: 0 auto
-
+      padding: 40px 0
 
       .panel__rsvp
-        +span-columns(8)
-        +shift(2)
+        +span-columns(10)
+        +shift(1)
         border: 1px dotted #b7a997
-        padding: 80px
+        padding: 40px
         background-color: #fff
-        box-shadow: 0px 0 50px rgba(#5d4f3a, .15)
+        box-shadow: 0px 0 25px rgba(#5d4f3a, .15)
 
         .panel__header
           .section__title
-            font-size: 42px
+            font-size: 32px
             margin-bottom: 10px
+            text-align: center
+            line-height: 140%
 
         .panel__body
           p
@@ -630,8 +675,8 @@ body.subscriptions.new
             font-weight: 300
             width: 100%
             text-align: center
-            padding: 15px 40px
-            font-size: 28px
+            padding: 15px 20px
+            font-size: 22px
             color: #fff
             text-decoration: none
             text-transform: uppercase
@@ -644,6 +689,27 @@ body.subscriptions.new
               background-color: darken(#dca02c, 20%)
 
 
+
+  @include respond-to(screen-md, screen-lg)
+
+    .section__body
+      .container
+        padding: 80px 0
+
+        .panel__rsvp
+          +span-columns(8)
+          +shift(2)
+          padding: 80px
+          box-shadow: 0px 0 50px rgba(#5d4f3a, .15)
+
+          .panel__header
+            .section__title
+              font-size: 42px
+
+          .panel__body
+            .btn
+              padding: 15px 40px
+              font-size: 28px
 
 
 
